@@ -22,3 +22,5 @@ RUN apk add --no-cache openssh rsyslog
 RUN sed -i '/imklog/s/^/#/' /etc/rsyslog.conf
 
 EXPOSE 9090
+
+CMD ["rsyslogd", "-n", "-f", "/etc/rsyslog.conf"]
